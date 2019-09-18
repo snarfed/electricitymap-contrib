@@ -1371,6 +1371,10 @@
             "countryName": "United States of America",
             "zoneName": "California"
           },
+          "US-CAR": {
+            "countryName": "United States of America",
+            "zoneName": "Carolinas"
+          },
           "US-HI-HA": {
             "countryName": "United States of America",
             "zoneName": "Hawaii"
@@ -1423,6 +1427,10 @@
             "countryName": "United States of America",
             "zoneName": "Nevada"
           },
+          "US-NW": {
+            "countryName": "United States of America",
+            "zoneName": "Northwest"
+          },
           "US-NY": {
             "countryName": "United States of America",
             "zoneName": "New York"
@@ -1438,6 +1446,10 @@
           "US-SC": {
             "countryName": "United States of America",
             "zoneName": "South Carolina"
+          },
+          "US-SE": {
+            "countryName": "United States of America",
+            "zoneName": "Southeast"
           },
           "US-SPP": {
             "countryName": "United States of America",
