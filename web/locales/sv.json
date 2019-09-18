@@ -1409,10 +1409,6 @@
             "countryName": "USA",
             "zoneName": "Oahu"
         },
-        "US-IPC": {
-            "countryName": "USA",
-            "zoneName": "IPC"
-        },
         "US-MISO": {
             "countryName": "USA",
             "zoneName": "MISO"

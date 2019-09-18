@@ -1249,10 +1249,6 @@
             "countryName": "USA",
             "zoneName": "CAISO"
         },
-        "US-IPC": {
-            "countryName": "USA",
-            "zoneName": "IPC"
-        },
         "US-MISO": {
             "countryName": "USA",
             "zoneName": "MISO"

@@ -841,10 +841,6 @@
             "countryName": "USA",
             "zoneName": "Kalifornia"
           },
-          "US-IPC": {
-            "countryName": "USA",
-            "zoneName": "sieć IPC"
-          },
           "US-MISO": {
             "countryName": "USA",
             "zoneName": "sieć MISO"

@@ -574,7 +574,7 @@ const zoneDefinitions = [
   { zoneName: 'US-HI-OA', type: 'subZone', id: 'US-HI-OA'},
   // { zoneName: 'US-IA', countryId: 'USA', stateId: 'US.IA', type: 'state' },
   // { zoneName: 'US-ID', countryId: 'USA', stateId: 'US.ID', type: 'state' },
-  { zoneName: 'US-IPC', type: 'states', countryId: 'USA', states: ['US.ID']},
+  // { zoneName: 'US-IPC', type: 'states', countryId: 'USA', states: ['US.ID']},
   // { zoneName: 'US-IL', countryId: 'USA', stateId: 'US.IL', type: 'state' },
   // { zoneName: 'US-IN', countryId: 'USA', stateId: 'US.IN', type: 'state' },
   // { zoneName: 'US-KS', countryId: 'USA', stateId: 'US.KS', type: 'state' },
@@ -612,9 +612,10 @@ const zoneDefinitions = [
   // { zoneName: 'US-RI', countryId: 'USA', stateId: 'US.RI', type: 'state' },
   // { zoneName: 'US-SC', countryId: 'USA', stateId: 'US.SC', type: 'state' },
   // { zoneName: 'US-SD', countryId: 'USA', stateId: 'US.SD', type: 'state' },
-  { zoneName: 'US-SEC', type: 'county', counties: ['ALACHUA', 'BAKER', 'BRADFORD', 'CITRUS', 'CLAY', 'COLUMBIA', 'DESOTO', 'DIXIE', 'GADSDEN', 'GILCHRIST', 'GLADES', 'HAMILTON', 'HARDEE', 'HENDRY', 'HERNANDO', 'HIGHLANDS', 'JEFFERSON', 'LAFAYETTE', 'LAKE', 'LEON', 'LEVY', 'LIBERTY', 'MADISON', 'MANATEE', 'OKEECHOBEE', 'OSCEOLA', 'PASCO', 'PUTNAM', 'SARASOTA', 'SUMTER', 'SUWANNEE', 'TAYLOR', 'UNION', 'WAKULLA']},
+  // { zoneName: 'US-SEC', type: 'county', counties: ['ALACHUA', 'BAKER', 'BRADFORD', 'CITRUS', 'CLAY', 'COLUMBIA', 'DESOTO', 'DIXIE', 'GADSDEN', 'GILCHRIST', 'GLADES', 'HAMILTON', 'HARDEE', 'HENDRY', 'HERNANDO', 'HIGHLANDS', 'JEFFERSON', 'LAFAYETTE', 'LAKE', 'LEON', 'LEVY', 'LIBERTY', 'MADISON', 'MANATEE', 'OKEECHOBEE', 'OSCEOLA', 'PASCO', 'PUTNAM', 'SARASOTA', 'SUMTER', 'SUWANNEE', 'TAYLOR', 'UNION', 'WAKULLA']},
   // US-FL (the state Florida) is the remaining counties that *aren't* in US-SEC
-  { zoneName: 'US-FL', type: 'county', counties: ['BAY', 'BREVARD', 'BROWARD', 'CALHOUN', 'CHARLOTTE', 'COLLIER', 'DADE', 'DUVAL', 'ESCAMBIA', 'FLAGLER', 'FRANKLIN', 'GULF', 'HILLSBOROUGH', 'HOLMES', 'INDIAN RIVER', 'JACKSON', 'LEE', 'MARION', 'MARTIN', 'MONROE', 'NASSAU', 'OKALOOSA', 'ORANGE', 'PALM BEACH', 'PINELLAS', 'POLK', 'SANTA ROSA', 'SEMINOLE', 'ST. JOHNS', 'ST. LUCIE', 'VOLUSIA', 'WALTON', 'WASHINGTON']},
+  // { zoneName: 'US-FL', type: 'county', counties: ['BAY', 'BREVARD', 'BROWARD', 'CALHOUN', 'CHARLOTTE', 'COLLIER', 'DADE', 'DUVAL', 'ESCAMBIA', 'FLAGLER', 'FRANKLIN', 'GULF', 'HILLSBOROUGH', 'HOLMES', 'INDIAN RIVER', 'JACKSON', 'LEE', 'MARION', 'MARTIN', 'MONROE', 'NASSAU', 'OKALOOSA', 'ORANGE', 'PALM BEACH', 'PINELLAS', 'POLK', 'SANTA ROSA', 'SEMINOLE', 'ST. JOHNS', 'ST. LUCIE', 'VOLUSIA', 'WALTON', 'WASHINGTON']},
+  { zoneName: 'US-FL', countryId: 'USA', stateId: 'US.FL', type: 'state' },
   { zoneName: 'US-SE', type: 'states', countryId: 'USA', states: [
     'US.MS', 'US.GA', 'US.AL']},
   { zoneName: 'US-SPP', type: 'states', countryId: 'USA', states: [
@@ -779,12 +780,12 @@ fs.writeFileSync('public/dist/zonegeometries.json', zoneFeatures.map(JSON.string
 const topojson = require('topojson');
 let topo = topojson.topology(zones);
 
-// merge contiguous Florida counties in US-FL and US-SEC so that we only see the
-// outer region boundary line(s), not the interior county boundary lines.
-// Example: https://bl.ocks.org/mbostock/5416405
-// Background: https://github.com/tmrowco/electricitymap-contrib/issues/1713#issuecomment-517704023
-topo.objects['US-FL'] = topojson.mergeArcs(topo, [topo.objects['US-FL']]);
-topo.objects['US-SEC'] = topojson.mergeArcs(topo, [topo.objects['US-SEC']]);
+// // merge contiguous Florida counties in US-FL and US-SEC so that we only see the
+// // outer region boundary line(s), not the interior county boundary lines.
+// // Example: https://bl.ocks.org/mbostock/5416405
+// // Background: https://github.com/tmrowco/electricitymap-contrib/issues/1713#issuecomment-517704023
+// topo.objects['US-FL'] = topojson.mergeArcs(topo, [topo.objects['US-FL']]);
+// topo.objects['US-SEC'] = topojson.mergeArcs(topo, [topo.objects['US-SEC']]);
 
 // Simplify all countries
 topo = topojson.presimplify(topo);

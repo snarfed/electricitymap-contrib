@@ -1375,6 +1375,10 @@
             "countryName": "United States of America",
             "zoneName": "Carolinas"
           },
+          "US-FL": {
+            "countryName": "United States of America",
+            "zoneName": "Florida"
+          },
           "US-HI-HA": {
             "countryName": "United States of America",
             "zoneName": "Hawaii"
@@ -1406,10 +1410,6 @@
           "US-HI-OA": {
             "countryName": "United States of America",
             "zoneName": "Oahu"
-          },
-          "US-IPC": {
-            "countryName": "United States of America",
-            "zoneName": "IPC"
           },
           "US-MISO": {
             "countryName": "United States of America",

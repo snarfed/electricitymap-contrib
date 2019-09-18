@@ -3738,7 +3738,7 @@
     "flag_file_name": "us.png",
     "timezone": null
   },
-  "US-SEC": {
+  "US-FL": {
     "bounding_box": [
       [
         -87.63333333,
@@ -3758,7 +3758,9 @@
     ],
     "flag_file_name": "us.png",
     "parsers": {
-      "production": "US_SEC.fetch_production"
+      "production": "EIA.fetch_production_mix",
+      "consumption": "EIA.fetch_demand",
+      "consumptionForecast": "EIA.fetch_consumption_forecast"
     },
     "timezone": "US/Eastern"
   },
@@ -4058,8 +4060,14 @@
       ]
     ],
     "contributors": [
-      "https://github.com/systemcatch"
+      "https://github.com/systemcatch",
+      "https://github.com/snarfed"
     ],
+    "parsers": {
+      "production": "EIA.fetch_production_mix",
+      "consumption": "EIA.fetch_demand",
+      "consumptionForecast": "EIA.fetch_consumption_forecast"
+    },
     "flag_file_name": "us.png",
     "timezone": null
   },
